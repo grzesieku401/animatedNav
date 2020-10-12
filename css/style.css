@@ -1,0 +1,44 @@
+body{
+    font-family: 'Unna', serif;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    height: 100vh;
+}
+
+.site-nav{
+    display: none;
+}
+
+h1{
+    font-size: 3rem;
+    padding: 40px;
+}
+
+h2{
+    font-size: 2.2rem;
+    padding: 0px 0px 30px 40px;
+}
+
+p{
+    line-height: 1.4rem;
+    padding: 5px 5px 5px 40px;
+}
+
+.container,
+footer{
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.container{
+    height: 70%;
+}
+
+footer{
+    min-height: 50px;
+    text-align: center;
+}
+
+.copy{
+
+}
