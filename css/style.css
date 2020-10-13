@@ -1,44 +1,81 @@
 body{
     font-family: 'Unna', serif;
-    font-weight: 700;
     letter-spacing: 0.6px;
     height: 100vh;
+    background-color: #43A047;
+    color: #354236;
 }
 
 .site-nav{
+    background-color: lightgreen;
+}
+
+.burger{
+    background-image: url("../img/iconmonstr-menu.svg");
+}
+
+.ximage{
+    background-image: url("../img/iconmonstr-x.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.display-off{
+    transition: 2s;
     display: none;
 }
 
+.nav-button{
+    margin-right: 40px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    opacity: .6;
+    cursor: pointer;
+}
+
+
 h1{
+    display: inline-block;
     font-size: 3rem;
     padding: 40px;
 }
 
+.title-and-nav-button{
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
 h2{
     font-size: 2.2rem;
-    padding: 0px 0px 30px 40px;
+    padding: 0px 40px 30px 40px;
 }
 
 p{
-    line-height: 1.4rem;
-    padding: 5px 5px 5px 40px;
+    line-height: 1.6rem;
+    padding: 5px 40px 5px 40px;
 }
 
-.container,
-footer{
+ .main-container{
     margin: 0 auto;
-    max-width: 900px;
-}
+    max-width: 1500px;
+    height: 100vh;
+    min-height: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
-.container{
-    height: 70%;
-}
+} 
 
 footer{
-    min-height: 50px;
+    height: 40px;
     text-align: center;
-}
+}  
 
 .copy{
-
+    padding: 7px;
 }
+
