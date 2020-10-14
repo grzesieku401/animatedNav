@@ -1,37 +1,64 @@
-var navButton = document.querySelector(".nav-button"),
-    elementsToHide = document.querySelectorAll(".container p, .container h2"),
-    navPanel = document.querySelector(".site-nav");
+var navButton = document.querySelector(".title-and-nav-button span"),
+    elementsToHide = document.querySelector(".content-container"),
+    navPanel = document.querySelector("nav"),
+    doors = document.querySelectorAll(".first-doors, .second-doors");
+ 
 
 function whenXPressed() {
-    navButton.classList.remove("ximage");
-    navButton.classList.add("burger"); 
-    showPandH();
-    navPanel.classList.add("display-off");
+    navButton.className="burger"; 
+    window.setTimeout(showContent,200);
+    hideNav();  
+    switchDoors();
 }
 
 function whenBurrgerPressed() {
-    navButton.classList.remove("burger");
-    navButton.classList.add("ximage");  
-    hidePandH();  
-    navPanel.classList.remove("display-off");
+    navButton.className="ximage";
+    window.setTimeout(showNav,10)
+    hideContent();
+    switchDoors("on");
 }
 
-function hidePandH() {
-    elementsToHide.forEach(function(element) {
-        element.classList.add("display-off");
-    });
+function showNav() {
+    navPanel.className = "site-nav-on";  
 }
 
-function showPandH() {
-    elementsToHide.forEach(function(element) {
-        element.classList.remove("display-off");
-    });   
+function hideNav() {
+    navPanel.className = "site-nav-off";  
+}
+
+function showContent() {
+    elementsToHide.className = "content-container-on" ; 
+}
+
+function hideContent() {
+    elementsToHide.className = "content-container-off" ; 
+}
+
+function switchDoors(state) {
+    doors.forEach(function (door) {
+        if (state ==="on") {
+            door.classList.remove("doors-off");
+        }
+        else{
+            door.classList.add("doors-off");
+        }
+    })
+}
+
+function resizeDoors() {
+    console.log("aaa");
 }
 
 navButton.onclick = function () {
-    if (navButton.classList.value.includes("burger")){
+    if (navButton.className==="burger"){
         whenBurrgerPressed();
     }else{
         whenXPressed();       
     }
+}
+
+window.onresize = function () {
+    if (navButton.className!=="burger"){
+        resizeDoors();
+    } 
 }

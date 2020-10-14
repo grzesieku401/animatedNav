@@ -1,17 +1,23 @@
 body{
     font-family: 'Unna', serif;
-    letter-spacing: 0.6px;
     height: 100vh;
     background-color: #43A047;
     color: #354236;
 }
 
-.site-nav{
-    background-color: lightgreen;
+li{
+    padding: 15px;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: #354236;
 }
 
 .burger{
     background-image: url("../img/iconmonstr-menu.svg");
+
 }
 
 .ximage{
@@ -20,12 +26,8 @@ body{
     background-size: cover;
 }
 
-.display-off{
-    transition: 2s;
-    display: none;
-}
-
-.nav-button{
+.burger,
+.ximage{
     margin-right: 40px;
     display: inline-block;
     width: 30px;
@@ -34,29 +36,50 @@ body{
     cursor: pointer;
 }
 
-
 h1{
     display: inline-block;
     font-size: 3rem;
-    padding: 40px;
+    padding: 20px 10px 30px 40px;
 }
 
-.title-and-nav-button{
+h1,
+.burger,
+.ximage{
+    z-index: 5;
+}
 
+.second-doors,
+.first-doors{
+    visibility: visible;
+    position: absolute;
+    height:100%;
+    background-color: gold;
+    width: 30%;
+    transition: .5s;
+}
+.second-doors{
+    right: 0px;
+    z-index: 2;
+}
+
+.first-doors{
+    left: 0;
+    z-index: 1;
+}
+
+.doors-off{
+    visibility: hidden;
+    background-color: gold;
+    width: 0;
+    transition: .5s .2s;
+}
+
+
+
+.title-and-nav-button{
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-}
-
-h2{
-    font-size: 2.2rem;
-    padding: 0px 40px 30px 40px;
-}
-
-p{
-    line-height: 1.6rem;
-    padding: 5px 40px 5px 40px;
 }
 
  .main-container{
@@ -70,12 +93,70 @@ p{
 
 } 
 
+
+.site-nav-off{
+    visibility: hidden;
+    height: 0;
+    padding: 0px;
+    text-align: center;
+    opacity: 0;
+    transition: .4s ;
+
+}
+.site-nav-on{
+    visibility: visible;
+    text-align: center;
+    opacity: 1;
+    transition: 1.2s  .3s;
+
+}
+.content-container{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content-container-on{
+    height:100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 1;
+    overflow: visible;
+    transition: 1s; 
+
+}
+.content-container-off{
+    visibility: hidden;
+    height: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    overflow: hidden; 
+    transition: .5s;
+}
+
+.display-none{
+    display: none;
+}
+
+
+h2{
+    font-size: 2.2rem;
+    padding: 0px 40px 10px 40px;
+}
+
+p{
+    line-height: 1.6rem;
+    padding: 7px 40px 7px 40px;
+    font-size: 1.2rem;
+}
+
 footer{
     height: 40px;
     text-align: center;
 }  
 
-.copy{
-    padding: 7px;
-}
 
